@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+{% for flash_message in app.session.flashBag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+
+	<h2 class="page-header">No any records found!</h2>
+
+
+{% endblock %}

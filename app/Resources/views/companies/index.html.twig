@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for flash_message in app.session.flashBag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+
+<h2 class="page-header">Companies list</h2>
+<table class="table table-condensed">
+<thead>
+<tr>
+<th>#</th> <th>Company's name</th> <th>Quota</th>
+</tr>
+</thead>
+<tbody>
+{% for company in companies %}
+<tr>
+<th scope="row">{{company.id}}</th> 
+<td>{{company.name}}</td>
+<td><b>{{company.quota}}</b> TB</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+    	<script>
+    		$("#documentationHumanColumn #companies").addClass('selected');
+    	</script>
+
+{% endblock %}

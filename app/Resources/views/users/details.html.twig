@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<h2 class="page-header">User: <strong>{{user.name}}</strong></h2>
+
+<table class="table"> <caption>Details of user <strong>{{user.name}}</strong>.</caption>
+<thead> <tr> <th>ID</th> <th>Name</th> <th>E-mail</th> <th>Company</th> </tr> </thead>
+<tbody> 
+<tr><td>{{user.id}}</td> <td>{{user.name}}</td> <td>{{user.email}}</td><td>{{companies[user.companyid]}}</td></tr></tbody> </table>
+{% endblock %}
